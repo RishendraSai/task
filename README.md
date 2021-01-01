@@ -13,6 +13,7 @@ The data store Functionalities :
 #Constrains
 
 1.The file size never exceeds 1GB
+
 2.The code returns following errors  
       *INVALIDKEY ->if KEYLENGTH is greater than 32 or key contains any numeric,special characters etc.,
       *KEY NOT EXIST-> if key does not exist or deleted earlier
