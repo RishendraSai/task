@@ -6,11 +6,11 @@ dic = {}  # 'dic' dictionary in which we store data
 
 
 
-# FOR Craetion time_out is optional 
+# FOR Craetion time_out is optional
 
 def create(key, value, timeout=0):
     if key in dic:
-        print("Key already exists") 
+        print("Key already exists")
     else:
         if key.isalpha():
             length=len(dic)
@@ -21,27 +21,27 @@ def create(key, value, timeout=0):
                     l = [value, time.time() + timeout]
                 if len(key) <= 32:  #input key capped at 32chars
                     dic[key] = l
-                   print("SUCCESSFULLY CREATED");
+                    print("SUCCESSFULLY CREATED")
             else:
                 print("Memory limit exceeded")  #if memory is more than 1GB
         else:
-            print("Invalid KEY_NAME no special characters or numbers are allowed")  
+            print("Invalid KEY_NAME no special characters or numbers are allowed")
 
 
 # for read operation
 
 def read(key):
     if key not in dic:
-        print("key does not exist.Enter a valid key") 
+        print("key does not exist.Enter a valid key")
     else:
         b = dic[key]
         if b[1] != 0:
             if time.time() < b[1]:  #Checking for time limitwith present time
-                i = str(key) + ":" + str(b[0]) 
+                i = str(key) + ":" + str(b[0])
                 print(i)
                 return
             else:
-                print("time not complted", key, "has expired") 
+                print("time not complted", key, "has expired")
         else:
             i = str(key) + ":" + str(b[0])
             print(i)
@@ -64,6 +64,3 @@ def delete(key):
         else:
             del dic[key]
             print("key is successfully deleted")
-
-
-
